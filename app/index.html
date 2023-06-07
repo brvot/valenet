@@ -4,6 +4,12 @@
         <title>Teste APP</title>
     </header>
     <body>
-        Funcionou 3...
+        <section id="output"></section>
+        <script>
+            let elem = document.getElementById("output");
+            fetch("/api/map")
+            .then(response => response.text())
+            .then(data => elem.innerText = data);
+        </script>
     </body>
 </html>
