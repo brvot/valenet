@@ -7,7 +7,7 @@
         <section id="output"></section>
         <script>
             let elem = document.getElementById("output");
-            fetch("/api/map")
+            fetch("/api/status")
             .then(response => response.text())
             .then(data => elem.innerText = data);
         </script>
