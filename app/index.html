@@ -1,9 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <header>
-        <title>Teste APP</title>
-    </header>
+  <head>
+
+    <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+    <script type='text/javascript'>
+    
+    google.charts.load('current', {packages:['orgchart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+        var data = new google.visualization.DataTable();
+        
+        data.addColumn('string', 'Name');
+        data.addColumn('string', 'Manager');
+        data.addColumn('string', 'ToolTip');
+
+        // For each orgchart box, provide the name, manager, and tooltip to show.
+        data.addRows([
+            ['EFVM', 'EFVM', 'NIVEL 1'],
+            ['PPV', 'EFVM', 'NIVEL 2'],
+            ['OCP', 'PPV', 'NIVEL 3'],
+            ['OCP', 'PPV', 'NIVEL 4'],
+            ['OCP', 'PPV', 'NIVEL 4']
+        ]);
+
+        var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
+        
+        chart.draw(data, {'allowHtml':true});
+
+    }
+   </script>
+    </head>
     <body>
+        <div id='chart_div'></div>
         <section>Primeiro site criado hehehe</section>
         <section id="output"></section>
         <script>
@@ -12,5 +42,5 @@
             .then(response => response.text())
             .then(data => elem.innerText = data);
         </script>
-    </body>
+  </body>
 </html>
