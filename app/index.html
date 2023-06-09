@@ -34,13 +34,5 @@
     </head>
     <body>
         <div id='chart_div'></div>
-        <section>Primeiro site criado hehehe</section>
-        <section id="output"></section>
-        <script>
-            let elem = document.getElementById("output");
-            fetch("https://valenet.azurewebsites.net/api/status")
-            .then(response => response.text())
-            .then(data => elem.innerText = data);
-        </script>
   </body>
 </html>
