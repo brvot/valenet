@@ -11,6 +11,7 @@ module.exports = async function (context, req) {
     });
 
     con.connect(function(err) {
+        
         if (err) throw err;
        
         context.res = {
