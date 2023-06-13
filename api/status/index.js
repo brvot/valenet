@@ -2,7 +2,6 @@
 module.exports = async function (context, req) {
 
     var mysql = require('mysql');
-    
 
     var con = mysql.createConnection({
         host: "db-sokits.mysql.uhserver.com",
